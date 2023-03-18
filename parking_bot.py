@@ -127,7 +127,7 @@ def maegesho(update, context):
     
 def main():
     # Create updater and pass in Bot's auth key. 
-    updater = Updater('6074370406:AAEwOjR5ZBiarDugTYSRVizjsZIAEa8yIms', use_context=True)
+    updater = Updater('6039930953:AAFzsl5pSun9ZBWYC98STpyvRC5G4zojJQ0', use_context=True)
     # Get dispatcher to register handlers
     dispatcher = updater.dispatcher
     # answer commands
