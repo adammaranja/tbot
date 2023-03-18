@@ -6,6 +6,7 @@ Created by Raivat Shah in 2019.
 # Imports
 from telegram.ext import Updater, CommandHandler, MessageHandler, filters
 import logging
+from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -25,7 +26,16 @@ def mwanzo(update, context):
 
 def maegesho(update, context):
     # Processing Outline
-    browser = webdriver.Chrome('directory_of_chrome_driver')
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("window-size=1400,1500")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("start-maximized")
+    options.add_argument("enable-automation")
+    options.add_argument("--disable-infobars")
+    options.add_argument("--disable-dev-shm-usage")
+    browser = webdriver.Chrome('options=options')
     browser.get('https://termis.tarura.go.tz/#/portal/parking')
     linkbar = browser.find_element(By.XPATH, value="//input[@formcontrolname='plateNumber']")
     linkbar.send_keys(context.args) # pass in the link from the argument
