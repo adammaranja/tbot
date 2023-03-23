@@ -149,7 +149,7 @@ def main():
     # start the bot
     updater.start_polling()
     # Stop
-    updater.idle()
+    # updater.idle()
 
 if __name__ == '__main__':
     main()
